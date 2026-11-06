@@ -204,9 +204,9 @@ static int inet_pton4(const char *src, unsigned char *dst) {
     } else
       return UV_EINVAL;
   }
-  if (octets < 4)
+  if (octets != 4)
     return UV_EINVAL;
-  memcpy(dst, tmp, sizeof(struct in_addr));
+  memcpy(dst, tmp, sizeof(tmp));
   return 0;
 }
 
