@@ -144,7 +144,9 @@ int uv_tcp_init_ex(uv_loop_t* loop, uv_tcp_t* tcp, unsigned int flags) {
 
 
 int uv_tcp_init(uv_loop_t* loop, uv_tcp_t* tcp) {
-  return uv_tcp_init_ex(loop, tcp, AF_UNSPEC);
+  (void)loop;
+  (void)tcp;
+  return UV_EINVAL;
 }
 
 
