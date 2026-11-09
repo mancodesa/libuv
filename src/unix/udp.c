@@ -939,9 +939,8 @@ int uv__udp_init_ex(uv_loop_t* loop,
                     uv_udp_t* handle,
                     unsigned flags,
                     int domain) {
-  int fd;
+  int fd = -1;
 
-  fd = -1;
   if (domain != AF_UNSPEC) {
     fd = uv__socket(domain, SOCK_DGRAM, 0);
     if (fd < 0)
